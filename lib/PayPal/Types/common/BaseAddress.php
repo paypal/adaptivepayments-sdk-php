@@ -71,6 +71,15 @@ class BaseAddress
 	 */ 
 	public $type;
 
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($line1 = NULL, $city = NULL, $countryCode = NULL) {
+		$this->line1 = $line1;
+		$this->city = $city;
+		$this->countryCode = $countryCode;
+	}
+
 
 }
 }

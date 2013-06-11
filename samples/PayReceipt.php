@@ -9,6 +9,7 @@ use PayPal\Types\AP\ReceiverList;
 use PayPal\Types\AP\SenderIdentifier;
 use PayPal\Types\Common\PhoneNumberType;
 use PayPal\Types\Common\RequestEnvelope;
+
 /**
  * PayReceipt.php
  * This file is called after the user clicks on a button during
@@ -248,10 +249,8 @@ if($ack != "SUCCESS") {
 	} else if(($_POST['actionType']== "PAY_PRIMARY")) {
 		$case ="4";
 	} else if(($_POST['actionType']== "CREATE") && ($response->paymentExecStatus == "CREATED" )) {
-		$configFile = PPConfigManager::getInstance();
-		$config = $configFile->getConfigHashmap();
-		$apiCred = PPCredentialManager::getInstance($config)->getCredentialObject(null);
-		if(str_replace('_api1.', '@', $apiCred->getUserName()) == $_POST["senderEmail"]) {
+// check if API caller is the money sender (implicit payment)
+		if('jb-us-seller@paypal.com' == $_POST["senderEmail"]) {
 			$case ="3";
 		} else {
 			$case ="2";
@@ -278,13 +277,13 @@ if($ack != "SUCCESS") {
 			echo "<tr><td>Ack :</td><td><div id='Ack'>$ack</div> </td></tr>";
 			echo "<tr><td>PayKey :</td><td><div id='PayKey'>$payKey</div> </td></tr>";
 			echo "<tr><td><a href=$payPalURL><b>Redirect URL to Complete Payment </b></a></td></tr>";
-			echo "<tr><td><a href=SetPaymentOption.php?payKey=$payKey><b>Set Payment Options(optional)</b></a></td></tr>";
-			echo "<tr><td><a href=ExecutePaymentOption.php?payKey=$payKey><b>Execute Payment Options</b></a></td></tr>";
+			echo "<tr><td><a href=SetPaymentOptions.php?payKey=$payKey><b>Set Payment Options(optional)</b></a></td></tr>";
+			echo "<tr><td><a href=ExecutePayment.php?payKey=$payKey><b>Execute Payment </b></a></td></tr>";
 			echo "</table>";
 			break;
 		case "4" :
 			echo"Payment to \"Primary Receiver\" is Complete<br/>";
-			echo"<a href=ExecutePaymentOption.php?payKey=$payKey><b>* \"Execute Payment\" to pay to the secondary receivers</b></a><br>";
+			echo"<a href=ExecutePayment.php?payKey=$payKey><b>* \"Execute Payment\" to pay to the secondary receivers</b></a><br>";
 			break;
 	}
 	echo "<pre>";

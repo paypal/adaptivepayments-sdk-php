@@ -37,6 +37,15 @@ class InstitutionCustomer
 	public $lastName;
 
 	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $middleName;
+
+	/**
 	 * The full name of the end consumer as known by the
 	 * institution. 
 	 * @access public
@@ -74,6 +83,24 @@ class InstitutionCustomer
 	 * @var string	 
 	 */ 
 	public $email;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var date	 
+	 */ 
+	public $dateOfBirth;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var PayPal\Types\Common\BaseAddress	 
+	 */ 
+	public $address;
 
 	/**
 	 * Constructor with arguments

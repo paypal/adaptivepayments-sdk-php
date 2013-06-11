@@ -5,7 +5,6 @@ use PayPal\Types\Common\RequestEnvelope;
 require_once('PPBootStrap.php');
 // create request
 $getAvailableShippingAddressesReq = new GetAvailableShippingAddressesRequest(new RequestEnvelope("en_US"), $_POST['key']);
-$logger->log("Created GetAvailableShippingAddressesRequest Object");
 $service  = new AdaptivePaymentsService();
 try {
 	$response = $service->GetAvailableShippingAddresses($getAvailableShippingAddressesReq);

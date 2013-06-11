@@ -114,6 +114,15 @@ class BaseAddress
 	 */ 
 	public $type;
 
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($line1 = NULL, $city = NULL, $countryCode = NULL) {
+		$this->line1 = $line1;
+		$this->city = $city;
+		$this->countryCode = $countryCode;
+	}
+
 
 }
 }
@@ -1103,6 +1112,15 @@ class InstitutionCustomer
 	public $lastName;
 
 	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $middleName;
+
+	/**
 	 * The full name of the end consumer as known by the
 	 * institution. 
 	 * @access public
@@ -1140,6 +1158,24 @@ class InstitutionCustomer
 	 * @var string 	 
 	 */ 
 	public $email;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var date 	 
+	 */ 
+	public $dateOfBirth;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var BaseAddress 	 
+	 */ 
+	public $address;
 
 	/**
 	 * Constructor with arguments

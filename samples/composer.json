@@ -1,8 +1,8 @@
 {
-    "name": "paypal/php-sdk-sample",
+    "name": "paypal/adaptivepayments-sdk-php-sample",
     "description": "PayPal adaptivepayments-sdk-php for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "homepage": "https://www.x.com/developers/paypal",
+    "homepage": "https://developer.paypal.com",
     "license": "Apache2",
     "authors": [
         {
@@ -13,6 +13,6 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/adaptivepayments-sdk-php":"v2.3.101"
+        "paypal/adaptivepayments-sdk-php":"v2.4.103"
     }
 }

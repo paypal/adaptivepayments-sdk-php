@@ -20,7 +20,7 @@
 						Pay Key * (Get PayKey via <a href='Pay'>Pay</a>)
 					</div>
 					<div class="param_value">
-						<input type="text" name="payKey" value="" />
+						<input type="text" name="payKey" value="<?php if(isset($_REQUEST['payKey'])){ echo $_REQUEST['payKey'];}?>" />
 					</div>
 
 				</div>

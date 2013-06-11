@@ -20,7 +20,7 @@
 				<div class="params">
 					<div class="param_name">Pay key *</div>
 					<div class="param_value">
-						<input name="payKey" id="payKey" value="" />
+						<input name="payKey" id="payKey" value="<?php if(isset($_REQUEST['payKey'])){ echo $_REQUEST['payKey'];}?>" />
 					</div>
 				</div>
 				<div class="section_header">Display options</div>

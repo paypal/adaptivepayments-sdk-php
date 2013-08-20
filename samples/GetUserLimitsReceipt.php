@@ -24,7 +24,10 @@ if( $_POST['email'] != "" || ($_POST['phoneCountry'] != "" && $_POST['phoneNumbe
 		}
 	}
 }
-$service = new AdaptivePaymentsService();
+/*
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
+ */
+$service = new AdaptivePaymentsService(Configuration::getAcctAndConfig());
 try {
 	$response = $service->GetUserLimits($getUserLimitsReq);
 } catch(Exception $ex) {
@@ -42,6 +45,7 @@ try {
 
 <body>
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 		<div id="response_form">
 			<h3>Get User Limits</h3>
 <?php

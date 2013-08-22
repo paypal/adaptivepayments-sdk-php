@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 		<div id="header">
 			<h3>Get Allowed Funding Sources</h3>
 			<div id="apidetails">A request to get the allowed funding sources

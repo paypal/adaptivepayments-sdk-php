@@ -163,6 +163,24 @@ class PaymentDetailsResponse
 
 	/**
 	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var PayPal\Types\AP\ShippingAddressInfo	 
+	 */ 
+	public $shippingAddress;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var dateTime	 
+	 */ 
+	public $payKeyExpirationDate;
+
+	/**
+	 * 
      * @array
 	 * @access public
 	 

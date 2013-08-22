@@ -18,6 +18,17 @@ class SenderOptions
 	public $requireShippingAddressSelection;
 
 	/**
+	 * Determines whether or not the UI pages should display the
+	 * shipping address set by user in this SetPaymentOptions
+	 * request. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var boolean	 
+	 */ 
+	public $addressOverride;
+
+	/**
 	 * 
 	 * @access public
 	 
@@ -25,6 +36,15 @@ class SenderOptions
 	 * @var string	 
 	 */ 
 	public $referrerCode;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var PayPal\Types\AP\ShippingAddressInfo	 
+	 */ 
+	public $shippingAddress;
 
 
 }

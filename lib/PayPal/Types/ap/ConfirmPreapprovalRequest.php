@@ -44,6 +44,15 @@ class ConfirmPreapprovalRequest
 	public $pin;
 
 	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $agreementType;
+
+	/**
 	 * Constructor with arguments
 	 */
 	public function __construct($requestEnvelope = NULL, $preapprovalKey = NULL) {

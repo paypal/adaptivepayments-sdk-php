@@ -253,6 +253,15 @@ class PreapprovalDetailsResponse
 
 	/**
 	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $agreementType;
+
+	/**
+	 * 
      * @array
 	 * @access public
 	 

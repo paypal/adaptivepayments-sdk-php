@@ -162,6 +162,17 @@ class PayRequest
 	public $sender;
 
 	/**
+	 * The pay key expires after the duration specified in this
+	 * column. If not provided, it defaults to normal expiration
+	 * behavior. Valid values are 5 minutes to 30 days. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var duration	 
+	 */ 
+	public $payKeyDuration;
+
+	/**
 	 * Constructor with arguments
 	 */
 	public function __construct($requestEnvelope = NULL, $actionType = NULL, $cancelUrl = NULL, $currencyCode = NULL, $receiverList = NULL, $returnUrl = NULL) {

@@ -13,6 +13,6 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/adaptivepayments-sdk-php":"v2.4.103"
+        "paypal/adaptivepayments-sdk-php":"v2.5.106"
     }
 }

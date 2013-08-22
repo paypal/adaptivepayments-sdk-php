@@ -1,4 +1,7 @@
 <?php
+$url = $_SERVER["PHP_SELF"];
+$url = preg_replace("/(.*)(adaptivepayments-sdk-php\/samples)(.*)/", "\\1\\2/index.php", $url);
+
 ?>
 <table id="apiResponse">
 	<tr>
@@ -17,4 +20,4 @@
 	</tr>
 </table>
 <br>
-<a href="index.php">Home</a>
+<a href=<?php echo $url?>>Home</a>

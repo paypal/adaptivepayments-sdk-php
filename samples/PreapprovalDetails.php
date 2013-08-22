@@ -1,8 +1,6 @@
 <?php
 require_once('PPBootStrap.php');
 
-$logger = new PPLoggingManager('PreapprovalDetails');
-
 ?>
 <html>
 <head>
@@ -13,6 +11,7 @@ $logger = new PPLoggingManager('PreapprovalDetails');
 </head>
 <body>
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 		<div id="header">
 			<h3>Preapproval Details</h3>
 			<div id="apidetails">A request to obtain information about an

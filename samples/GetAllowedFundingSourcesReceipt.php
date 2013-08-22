@@ -6,7 +6,10 @@ require_once('PPBootStrap.php');
 $requestEnvelope = new RequestEnvelope("en_US");
 $getAllowedFundingSourcesReq = new GetAllowedFundingSourcesRequest($requestEnvelope, $_POST['key']);
 
-$service = new AdaptivePaymentsService();
+/*
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
+ */
+$service = new AdaptivePaymentsService(Configuration::getAcctAndConfig());
 try {
 	$response = $service->GetAllowedFundingSources($getAllowedFundingSourcesReq);
 } catch(Exception $ex) {
@@ -24,6 +27,7 @@ try {
 
 <body>
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 		<div id="response_form">
 			<h3>Get Allowed Funding Sources</h3>
 <?php 

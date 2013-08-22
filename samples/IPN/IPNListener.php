@@ -9,8 +9,9 @@
  * incoming IPN variables.
  */
 require_once('../PPBootStrap.php');
-
-$ipnMessage = new PPIPNMessage();
+// first param takes ipn data to be validated. if null, raw POST data is read from input stream
+// For a full list of configuration parameters refer in wiki page (https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK)
+$ipnMessage = new PPIPNMessage(null, Configuration::getConfig());
 foreach($ipnMessage->getRawData() as $key => $value) {
 	error_log("IPN: $key => $value");
 }

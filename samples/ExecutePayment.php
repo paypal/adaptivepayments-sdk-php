@@ -4,9 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>PayPal Adaptive Payments - Execute Payment</title>
 <link rel="stylesheet" href="Common/sdk.css"/>
+<script type="text/javascript">
+function getPayKey(){
+	document.getElementById("payKey").value = localStorage.getItem("payKey");
+	localStorage.removeItem("payKey");
+}
+</script>
 </head>
-<body>
+<body onload="getPayKey();">
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 		<div id="header">
 			<h3>ExecutePayment</h3>
 			<div id="apidetails">The ExecutePayment API operation lets you
@@ -20,23 +27,18 @@
 						Pay Key * (Get PayKey via <a href='Pay'>Pay</a>)
 					</div>
 					<div class="param_value">
-						<input type="text" name="payKey" value="<?php if(isset($_REQUEST['payKey'])){ echo $_REQUEST['payKey'];}?>" />
+						<input type="text" name="payKey" id="payKey" value="" />
 					</div>
 
 				</div>
 				<div class="param_name">Action Type *</div>
 				<div class="param_value">
-					<select name="actionType">
-						<option value="">--Select a value--</option>
-						<option value="PAY">Pay</option>
-						<option value="CREATE">Create</option>
-						<option value="PAY_PRIMARY">Pay Primary</option>
-					</select>
+					<input name="actionType" value="PAY" />
 				</div>
 				<div class="params">
-					<div class="param_name">Funding Plan ID</div>
+					<div class="param_name">Funding Plan ID *</div>
 					<div class="param_value">
-						<input type="text" name="fundingPlanID" value="" />
+						<input type="text" name="fundingPlanID" value="0" />
 					</div>
 
 				</div>
@@ -44,7 +46,7 @@
 					<input type="submit" name="ExecutePaymentBtn"
 						value="ExecutePayment" /><br />
 				</div>
-				<a href="index.html">Home</a>
+				<a href="index.php">Home</a>
 			</div>
 		</form>		
 	</div>

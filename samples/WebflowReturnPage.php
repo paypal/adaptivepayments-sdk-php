@@ -35,7 +35,7 @@ require_once 'Common/menu.html';?>
 						echo "<tr><td>" . $variable . "</td>";
 						echo "<td>" . $value . "</td></tr>";
 					}
-?>
+					?>
 
 				</table>
 			</div>

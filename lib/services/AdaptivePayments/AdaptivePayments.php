@@ -836,6 +836,90 @@ class FundingTypeInfo
 
 
 /**
+ * ShippingAddressInfo. 
+ */
+class ShippingAddressInfo  
+  extends PPMessage   {
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $addresseeName;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $street1;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $street2;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $city;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $state;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $zip;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $country;
+
+	/**
+	 * 
+     * @array
+	 * @access public
+	 
+	 	 	 	 
+	 * @var PhoneNumber 	 
+	 */ 
+	public $phone;
+
+
+}
+
+
+
+/**
  * 
  */
 class FundingTypeList  
@@ -1785,6 +1869,17 @@ class SenderOptions
 	public $requireShippingAddressSelection;
 
 	/**
+	 * Determines whether or not the UI pages should display the
+	 * shipping address set by user in this SetPaymentOptions
+	 * request. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var boolean 	 
+	 */ 
+	public $addressOverride;
+
+	/**
 	 * 
 	 * @access public
 	 
@@ -1792,6 +1887,15 @@ class SenderOptions
 	 * @var string 	 
 	 */ 
 	public $referrerCode;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var ShippingAddressInfo 	 
+	 */ 
+	public $shippingAddress;
 
 
 }
@@ -2046,6 +2150,15 @@ class ConfirmPreapprovalRequest
 	 * @var string 	 
 	 */ 
 	public $pin;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $agreementType;
 
 	/**
 	 * Constructor with arguments
@@ -2780,6 +2893,24 @@ class PaymentDetailsResponse
 
 	/**
 	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var ShippingAddressInfo 	 
+	 */ 
+	public $shippingAddress;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var dateTime 	 
+	 */ 
+	public $payKeyExpirationDate;
+
+	/**
+	 * 
      * @array
 	 * @access public
 	 
@@ -2952,6 +3083,17 @@ class PayRequest
 	 * @var SenderIdentifier 	 
 	 */ 
 	public $sender;
+
+	/**
+	 * The pay key expires after the duration specified in this
+	 * column. If not provided, it defaults to normal expiration
+	 * behavior. Valid values are 5 minutes to 30 days. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $payKeyDuration;
 
 	/**
 	 * Constructor with arguments
@@ -3363,6 +3505,15 @@ class PreapprovalDetailsResponse
 
 	/**
 	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $agreementType;
+
+	/**
+	 * 
      * @array
 	 * @access public
 	 
@@ -3755,6 +3906,33 @@ class RefundResponse
 	 * @var ErrorData 	 
 	 */ 
 	public $error;
+
+
+}
+
+
+
+/**
+ * Phone number with Type of phone number 
+ */
+class PhoneNumber  extends PhoneNumberType  
+  {
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $type;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($type = NULL) {
+		$this->type = $type;
+	}
 
 
 }

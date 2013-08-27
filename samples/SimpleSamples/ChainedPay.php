@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Use the Pay API operation to transfer funds from a sender’s PayPal account to one or more receivers’ PayPal accounts. You can use the Pay API operation to make simple payments, chained payments, or parallel payments; these payments can be explicitly approved, preapproved, or implicitly approved.
+ * Use the Pay API operation to transfer funds from a senderï¿½s PayPal account to one or more receiversï¿½ PayPal accounts. You can use the Pay API operation to make simple payments, chained payments, or parallel payments; these payments can be explicitly approved, preapproved, or implicitly approved.
 
  Use the Pay API operation to transfer funds from a sender's PayPal account to one or more receivers' PayPal accounts. You can use the Pay API operation to make simple payments, chained payments, or parallel payments; these payments can be explicitly approved, preapproved, or implicitly approved. 
 
@@ -37,9 +37,9 @@ if(isset($_POST['receiverEmail'])) {
 /*
  * The action for this request. Possible values are:
 
-    PAY – Use this option if you are not using the Pay request in combination with ExecutePayment.
-    CREATE – Use this option to set up the payment instructions with SetPaymentOptions and then execute the payment at a later time with the ExecutePayment.
-    PAY_PRIMARY – For chained payments only, specify this value to delay payments to the secondary receivers; only the payment to the primary receiver is processed.
+    PAY ï¿½ Use this option if you are not using the Pay request in combination with ExecutePayment.
+    CREATE ï¿½ Use this option to set up the payment instructions with SetPaymentOptions and then execute the payment at a later time with the ExecutePayment.
+    PAY_PRIMARY ï¿½ For chained payments only, specify this value to delay payments to the secondary receivers; only the payment to the primary receiver is processed.
 
  */
 /*
@@ -64,7 +64,7 @@ if($_POST["memo"] != "") {
 Creating service wrapper object to make API call and loading
 Configuration::getSignatureConfig() returns array that contains credential and config parameters
  */
-$service = new AdaptivePaymentsService(Configuration::getSignatureConfig());
+$service = new AdaptivePaymentsService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$response = $service->Pay($payRequest);

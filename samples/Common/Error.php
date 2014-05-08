@@ -4,7 +4,7 @@ function getDetailedExceptionMessage($ex) {
 		return "Error connecting to " . $ex->getUrl();
 	} else if($ex instanceof PPConfigurationException) {
 		return "Error at $ex->getLine() in $ex->getFile()";
-	} else if($ex instanceof PPInvalidCredentialException || $x instanceof PPMissingCredentialException) {
+	} else if($ex instanceof PPInvalidCredentialException || $ex instanceof PPMissingCredentialException) {
 		return $ex->errorMessage();
 	}
 	return "";

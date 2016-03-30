@@ -1,5 +1,5 @@
 {
-    "name": "paypal/adaptivepayments-sdk-php",
+    "name": "mynextmatch/adaptivepayments-sdk-php",
     "description": "PayPal adaptivepayments SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
     "homepage": "https://developer.paypal.com",
